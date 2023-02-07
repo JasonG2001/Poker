@@ -1,0 +1,18 @@
+class:
+	player
+	game
+
+functions:
+	player:
+		get_2_cards
+		choose_to_play_or_fold
+		call_or_raise
+		get_money
+	game:
+		get_preflop
+		get_draw
+		get_get_river
+		play
+		
+		
+	
