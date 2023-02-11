@@ -3,18 +3,18 @@ import random
 
 class Game:
 
-    def __init__(self):
+    def __init__(self) -> None:
 
         self.lowest_num: int = 2
         self.highest_num: int = 14
-        self.SUITS: Set[str] = set("C", "D", "H", "S")
+        self.SUITS: Set[str] = set(["C", "D", "H", "S"])
         self.CONVERSION: Dict[int,str] = {
-            11: "J",
-            12: "Q",
-            13: "K",
-            14: "A"
+            "11": "J",
+            "12": "Q",
+            "13": "K",
+            "14": "A"
         }
-
+        
         self.deck: Set[str] = set() 
         self.add_cards_to_deck()
 
@@ -29,20 +29,13 @@ class Game:
         return random.choice(leftover_cards)
 
 
-    def add_cards_to_deck(self):
+    def add_cards_to_deck(self) -> None:
 
         num: int
         for num in range(self.lowest_num, self.highest_num + 1):
+            num: str = str(num)
             if num in self.CONVERSION:
                 num: str = self.CONVERSION[num]
             suit: str
             for suit in self.SUITS:
                 self.deck.add(suit + num)
-
-        return self.deck
-            
-        
-
-
-
-
